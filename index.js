@@ -21,6 +21,7 @@ connectDB()
 const app = express()
 
 import auth from './routes/auth.js'
+import brands from './routes/brands.js'
 
 app.use(express.json())
 app.use(cookieParser())
@@ -42,6 +43,7 @@ app.use(hpp())
 app.use(cors())
 
 app.use('/api/v1/auth', auth)
+app.use('/api/v1/brands', brands)
 
 app.use(errorHandler)
 const PORT = process.env.PORT
